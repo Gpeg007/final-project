@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Grocery Sales</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  </head>
+
+<!------------------------------------------------------------------>
+
+  <body>
+
+
+  <div class="container">
+
+    <!-- ############### -->
+    <!-- ## JUMBOTRON ## -->
+    <!-- ############### -->
+    <div class="jumbotron">
+      <h1 class="display-4">Grocery Sales Forecasting</h1>
+      <p class="lead">
+        Using machine learning to understand consumer behavior.
+      </p>
+      <!-- <hr class="my-1"> -->
+      <!-- <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+      </p> -->
+    </div>
+
+    <br>
+
+    <!-- ############### -->
+    <!-- ## FIRST ROW ## -->
+    <!-- ############### -->
+    <div class="row">
+      <!-- Header -->
+      <div class="col-lg-12">
+        <img src="images/vegetable-stand-photo.jpg" alt="" style="float:right" class="fit">
+        <h2>The Data</h2>
+        <p>
+          The data we used in our project was found in a competition on kaggle that had concluded, and contained grocery store data for several cities in Ecuador. We were originally going to analyze hospital bed availability data and compare it to COVID 19 infection rate data simply due to it being the most prevalent information available, but we found something much more palatable/less depressing so we went in that direction instead. The grocery store data was stored in csv files that we downloaded and were mostly able to access with no problem using pgAdmin for storage. However, there was one file that was 4.8 GB in size and had over a hundred million rows of data, and we were unable to work with it because none of our computers could handle that much for any singular process, let alone the multiple, we would need to run for our machine learning algorithm. 
+        </p>
+        <h2>The Data Manipulation</h2>
+        <p>Our group needed to refine our data into something much more manageable to even be able to properly access it, so we needed a plan with a significantly smaller scope in mind. With a lot of brainstorming and some assistance from our staff resources, we decided to narrow our dataset down to two dates out of the year for all stores in our datasets: The day before, and the day after Christmas. This simple shift in our scope made the data much easier to work with and gave us something that we could analyze and project trends with our algorithm.</p>
+      </div>
+    </div><!-- Row 1 Close -->
+    
+    <hr class="my-5">
+
+    <!-- ############# -->
+    <!-- ## TABREAU ## -->
+    <!-- ############# -->
+    <div class="row">
+      <div class="col-lg-12">
+        <h4>Tableau Visual</h4>
+        <p> -Goes here- </p>
+        <!-- @TABLEAU EMBED CODE GOES HERE -->
+        <center>
+          <div class='tableauPlaceholder' id='viz1588292896743' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ci&#47;CitiBikeDashboardChallenge&#47;Story1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='CitiBikeDashboardChallenge&#47;Story1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ci&#47;CitiBikeDashboardChallenge&#47;Story1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1588292896743');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1016px';vizElement.style.height='991px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+        </center>
+      </div>
+    </div>
+
+    <hr class="my-5"><br>
+    
+    <!-- ################ -->
+    <!-- ## SECOND ROW ## -->
+    <!-- ################ -->
+    <div class="row">
+      <div class="col-lg-12">
+        <h2>Rage Against the Machine</h2>
+        <p>Using the scikit-learn package in python, we were able to utilize multiple machine learning algorithms (basic linear, Ridge, Lasso, and Elastic Net regression) for a regression problem of how many units of a product are predicted to sell based on the other features (store number, item number, year, and if it was on promotion). However, since we had issues manipulating and utilizing the full dataset, the model was inaccurate (with a R^2 score of 0.0108).</p>
+        <p>Looking at the data just in the two days, we shifted the target prediction to be the total sales of a product by year. The new features or data points included a count of the stores selling the product and the total stores that had the item on promotion. This manipulation of the data and shift in the target produced better model results, with an R^2 score of 0.1924 from the Elastic Net algorithm. (That's over 1680% improvement!)</p>
+      </div>
+    </div><!-- Row 2 Close -->
+    
+    <br><br>
+
+    <!-- ############### -->
+    <!-- ## THIRD ROW ##-->
+    <!-- ############### -->
+    <div class="row">
+      <!-- Image : 1 -->
+      <div class="col-lg-4">
+        <h3>Predictions</h3>
+        <p>IMAGE 1</p>
+        <img src="images/predict_prices_1.png" alt="">
+      </div>
+      <!-- Image : 2 -->
+      <div class="col-lg-4">
+        <h3>Scatter Plot</h3>
+        <p>IMAGE 2</p>
+        <img src="images/predict_prices_2.png" alt="">
+      </div>
+      <!-- Image : 3 -->
+      <div class="col-lg-4">
+        <h3>Regression</h3>
+        <p>IMAGE 3</p>
+        <img src="images/predict_prices_3.png" alt="">
+      </div>
+      
+    </div><!-- Row 3 Close -->
+
+    <hr class="my-5"><br>
+
+    <!-- ############ -->
+    <!-- ## Footer ## -->
+    <!-- ############ -->
+    <div class="row" style="background-color: rgb(220, 220, 220)">
+      <div class="col-lg-12" id="footer">
+        <br>
+        <strong><u>Project Credits</u></strong>
+        <p><strong>
+          — Presentation Date:</strong><i> 2020-05-05 </i>
+          <br>
+          <strong>— Authors:</strong> <i>Gunter Pevey, Sarah Raisian, Jon Disarufino, Laura Hawkins, Nam Luu</i>
+        </p>
+        <br>
+      </div><!-- Section Close -->
+    </div><!-- Footer Close -->
+
+  </div><!-- Full Page Container Close -->
+
+
+
+
+  </body>
+  <!-- API key -->
+
+</html>
