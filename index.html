@@ -61,8 +61,7 @@
     <!-- ############# -->
     <div class="row">
       <div class="col-lg-12">
-        <h4>Tableau Visual</h4>
-        <p> -Goes here- </p>
+        <h4>Grocery Holiday Visualizations</h4>
         <!-- @TABLEAU EMBED CODE GOES HERE -->
         <center>
           <div class='tableauPlaceholder' id='viz1588437745873' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;MS&#47;MS2DYBXD8&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;MS2DYBXD8' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;MS&#47;MS2DYBXD8&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1588437745873');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1016px';vizElement.style.height='991px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>        </center>
@@ -76,9 +75,9 @@
     <!-- ################ -->
     <div class="row">
       <div class="col-lg-12">
-        <h2>Rage Against the Machine</h2>
+        <h2>Rage Against the Machine Learning</h2>
         <p>Using the scikit-learn package in python, we were able to utilize multiple machine learning algorithms (basic linear, Ridge, Lasso, and Elastic Net regression) for a regression problem of how many units of a product are predicted to sell based on the other features (store number, item number, year, and if it was on promotion). However, since we had issues manipulating and utilizing the full dataset, the model was inaccurate (with a R^2 score of 0.0108).</p>
-        <p>Looking at the data just in the two days, we shifted the target prediction to be the total sales of a product by year. The new features or data points included a count of the stores selling the product and the total stores that had the item on promotion. This manipulation of the data and shift in the target produced better model results, with an R^2 score of 0.1924 from the Elastic Net algorithm. (That's over 1680% improvement!)</p>
+        <p>Looking at the data just in the two days, we shifted the target prediction to be the total sales of a product by year. The new features or data points included a count of the stores selling the product and the total stores that had the item on promotion. This manipulation of the data and shift in the target produced better model results, with an R^2 score of 0.1924 from the Elastic Net algorithm. (That's over 178.74% difference!)</p>
       </div>
     </div><!-- Row 2 Close -->
     
@@ -90,21 +89,33 @@
     <div class="row">
       <!-- Image : 1 -->
       <div class="col-lg-4">
-        <h3>Predictions</h3>
-        <p>IMAGE 1</p>
-        <img src="images/predict_prices_1.png" alt="">
+        <h3>1 Day Model</h3>
+        <img src="images/residual_plot_1.png" alt="">
+        <p>LINEAR REGRESSION MODEL WITH SCALED DATA<br>
+          RMSE Score:<br>
+          0.83874873850647<br>
+          RSquare Score:<br>
+          0.010813647895218437</p>
       </div>
       <!-- Image : 2 -->
       <div class="col-lg-4">
-        <h3>Scatter Plot</h3>
-        <p>IMAGE 2</p>
-        <img src="images/predict_prices_2.png" alt="">
+        <h3>1 Day Model + Units Sold</h3>
+        <img src="images/residual_plot_2.png" alt="">
+        <p>LINEAR REGRESSION MODEL WITH SCALED DATA<br>
+          RMSE Score:<br>
+          0.9637005167794067<br>
+          RSquare Score:<br>
+          0.15514638794039926</p>
       </div>
       <!-- Image : 3 -->
       <div class="col-lg-4">
-        <h3>Regression</h3>
-        <p>IMAGE 3</p>
-        <img src="images/predict_prices_3.png" alt="">
+        <h3>2 Day Model + Units Sold</h3>
+        <img src="images/residual_plot_3.png" alt="">
+        <p>LINEAR REGRESSION MODEL WITH SCALED DATA<br>
+          RMSE Score:<br>
+          0.7836763143842802<br>
+          RSquare Score:<br>
+          0.19190353538491678</p>
       </div>
       
     </div><!-- Row 3 Close -->
