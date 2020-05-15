@@ -11,12 +11,6 @@ WE used SQL as our database to store and clean our millions of rows of data, Sci
 
 ![Our Model-Training Code](images/Machine_Learning_Notebook.png)
 
-![Our First Prediction](images/predict_prices_1.png)
-
-![Our Second Prediction](images/predict_prices_2.png)
-
-![Our Third Prediction](images/predict_prices_3.png)
-
 ![Our First Residual Plot](images/residual_plot_1.png)
 
 ![Our Second Residual Plot](images/residual_plot_2.png)
